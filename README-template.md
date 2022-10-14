@@ -14,7 +14,7 @@
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://github.com/Kamasah-Dickson/Expenses-chart-component)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
