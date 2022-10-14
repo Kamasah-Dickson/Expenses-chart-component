@@ -1,0 +1,43 @@
+@use '../util/' as u;
+@use 'colors' as c;
+
+html {
+	font-size: 100%;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-size: u.rem(18);
+	background-color: c.$Cream;
+	font-family: u.$font;
+}
+
+img {
+	display: block;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+}
+
+footer {
+	text-align: center;
+	font-size: u.rem(15);
+	font-size: clamp(u.rem(4), u.rem(10) + 2vw, u.rem(13));
+	margin-bottom: u.em(10);
+	color: c.$Dark-brown;
+	a {
+		color: c.$Cyan;
+	}
+
+	@include u.min-width(medium) {
+		display: none;
+	}
+}

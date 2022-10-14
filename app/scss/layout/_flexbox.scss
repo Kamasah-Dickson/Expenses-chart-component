@@ -1,0 +1,228 @@
+@use '../Globals/' as g;
+@use '../util/' as u;
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.card {
+	width: min(100% - u.rem(30), u.rem(450));
+	margin-inline: auto;
+	margin-block: u.rem(16);
+	&__header {
+		background-color: g.$Soft-red;
+		@include u.flex;
+		padding: u.rem(21);
+		border-radius: u.rem(15);
+		margin-bottom: u.em(15);
+		box-shadow: u.rem(0) u.rem(0) u.rem(10) g.$Cream;
+
+		&__left {
+			color: g.$Very-pale-orange;
+			cursor: pointer;
+
+			&__amount {
+				margin-top: u.rem(10);
+				color: g.$Cream;
+				cursor: pointer;
+			}
+		}
+	}
+	&__body {
+		background-color: g.$Very-pale-orange;
+		padding: u.rem(5);
+		border-radius: u.rem(15);
+		box-shadow: u.rem(0) u.rem(0) u.rem(10) g.$Cream;
+		@include u.min-width(small) {
+			padding: u.rem(20);
+		}
+		&--period {
+			margin-bottom: u.em(35);
+		}
+		&__tally {
+			@include u.flex;
+			align-items: flex-end;
+			margin-bottom: u.rem(60);
+			.box {
+				width: 20px;
+				width: clamp(u.rem(20), u.rem(20) + 3vw, u.rem(40));
+				height: u.rem(150);
+				background-color: g.$Soft-red;
+				position: relative;
+				border-radius: u.rem(5);
+				margin-inline: u.rem(5);
+				&:hover {
+					background-color: g.$Soft-red-hover;
+					transition: 0.5s ease;
+					cursor: pointer;
+					&::after {
+						visibility: visible;
+						transition: 0.5s ease;
+					}
+				}
+				&::before {
+					position: absolute;
+					left: u.rem(6);
+					display: block;
+					cursor: pointer;
+					bottom: -30px;
+					font-size: clamp(u.rem(6), u.rem(6) + 2vw, u.rem(15));
+					color: g.$Medium-brown;
+				}
+				&::after {
+					position: relative;
+					top: u.rem(-35);
+					left: u.rem(-5);
+					width: 50px;
+					text-align: center;
+					background-color: g.$Dark-brown;
+					color: g.$Very-pale-orange;
+					padding: u.em(10);
+					font-size: u.rem(12);
+					border-radius: u.rem(4);
+					visibility: hidden;
+				}
+			}
+			&__box1 {
+				height: u.rem(47) !important;
+				&::before {
+					content: 'mon';
+				}
+				&::after {
+					content: '$10.36';
+				}
+			}
+			&__box2 {
+				height: u.rem(100) !important;
+				&::before {
+					content: 'tue';
+				}
+				&::after {
+					content: '$27.36';
+				}
+			}
+			&__box3 {
+				background-color: g.$Cyan !important;
+				transition: 0.3s ease;
+				&::before {
+					content: 'wed';
+				}
+
+				&::after {
+					content: '$52.36';
+				}
+
+				&:hover {
+					background-color: g.$Cyan-hover !important;
+				}
+			}
+			&__box4 {
+				height: u.rem(85) !important;
+				&::before {
+					content: 'thu';
+				}
+				&::after {
+					content: '$23.07';
+				}
+			}
+			&__box5 {
+				height: u.rem(65) !important;
+				&::before {
+					content: 'fri';
+				}
+				&::after {
+					content: '$19.16';
+				}
+			}
+			&__box6 {
+				height: u.rem(120) !important;
+				&::before {
+					content: 'sat';
+				}
+				&::after {
+					content: '$39.05';
+				}
+			}
+			&__box7 {
+				height: u.rem(73) !important;
+				&::before {
+					content: 'sun';
+				}
+				&::after {
+					content: '$21.26';
+				}
+			}
+		}
+		&__footer {
+			border-top: u.rem(2) solid g.$Cream;
+			@include u.flex;
+			align-items: flex-end;
+			padding: u.em(15) u.rem(10);
+			&__left {
+				&__total {
+					color: g.$Medium-brown;
+					cursor: pointer;
+				}
+				&__total-amount {
+					margin-top: u.rem(10);
+					cursor: pointer;
+				}
+			}
+			&__right {
+				@include u.flex;
+				flex-direction: column;
+				&__percentage {
+					align-self: flex-end;
+					cursor: pointer;
+				}
+
+				&__period {
+					color: g.$Medium-brown;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+.kamasah {
+	position: relative;
+	bottom: 0;
+	margin-top: u.rem(5);
+	display: none;
+	.user {
+		width: u.rem(55);
+		height: u.rem(55);
+		overflow: hidden;
+		border-radius: 100%;
+
+	}
+	@include u.min-width(medium) {
+		@include u.flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		position: absolute;
+		top:u.rem(30);
+		height: fit-content;
+		right: u.rem(30);
+		.user{
+			&:hover{
+				border:2px solid black;
+			}
+		}
+		span{
+			color:g.$Cream;
+			background-color: g.$Dark-brown;
+			padding:u.rem(5);
+			margin-top: u.em(8);
+			border-radius: u.em(5);
+			text-align: center;
+			
+		}
+		
+	}
+}

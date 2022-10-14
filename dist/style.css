@@ -1,0 +1,303 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 1.125rem;
+  background-color: hsl(27deg, 66%, 92%);
+  font-family: "DM Sans", sans-serif;
+}
+
+img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9375rem;
+  font-size: clamp(0.25rem, 0.625rem + 2vw, 0.8125rem);
+  margin-bottom: 0.625em;
+  color: hsl(25deg, 47%, 15%);
+}
+footer a {
+  color: hsl(186deg, 34%, 60%);
+}
+@media (min-width: 56.25em) {
+  footer {
+    display: none;
+  }
+}
+
+h1 {
+  font-weight: 700;
+  line-height: 1.1;
+  font-size: clamp(1.5625rem, 0.9375rem + 2vw, 1.6875rem);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  line-height: 1.1;
+  color: hsl(25deg, 47%, 15%);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 1.0625rem + 2vw, 1.6875rem);
+}
+
+h3 {
+  font-size: clamp(1.125rem, 1.25rem + 2vw, 2.5rem);
+}
+
+h4 {
+  font-size: clamp(0.9375rem, 1.25rem + 2vw, 1.125rem);
+}
+
+span {
+  font-weight: 400;
+  font-size: clamp(0.875rem, 1.0625rem + 2vw, 1rem);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.card {
+  width: min(100% - 1.875rem, 28.125rem);
+  margin-inline: auto;
+  margin-block: 1rem;
+}
+.card__header {
+  background-color: hsl(10deg, 79%, 65%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3125rem;
+  border-radius: 0.9375rem;
+  margin-bottom: 0.9375em;
+  box-shadow: 0rem 0rem 0.625rem hsl(27deg, 66%, 92%);
+}
+.card__header__left {
+  color: hsl(33deg, 100%, 98%);
+  cursor: pointer;
+}
+.card__header__left__amount {
+  margin-top: 0.625rem;
+  color: hsl(27deg, 66%, 92%);
+  cursor: pointer;
+}
+.card__body {
+  background-color: hsl(33deg, 100%, 98%);
+  padding: 0.3125rem;
+  border-radius: 0.9375rem;
+  box-shadow: 0rem 0rem 0.625rem hsl(27deg, 66%, 92%);
+}
+@media (min-width: 25em) {
+  .card__body {
+    padding: 1.25rem;
+  }
+}
+.card__body--period {
+  margin-bottom: 2.1875em;
+}
+.card__body__tally {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.75rem;
+}
+.card__body__tally .box {
+  width: 20px;
+  width: clamp(1.25rem, 1.25rem + 3vw, 2.5rem);
+  height: 9.375rem;
+  background-color: hsl(10deg, 79%, 65%);
+  position: relative;
+  border-radius: 0.3125rem;
+  margin-inline: 0.3125rem;
+}
+.card__body__tally .box:hover {
+  background-color: hsl(10deg, 79%, 80%);
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.card__body__tally .box:hover::after {
+  visibility: visible;
+  transition: 0.5s ease;
+}
+.card__body__tally .box::before {
+  position: absolute;
+  left: 0.375rem;
+  display: block;
+  cursor: pointer;
+  bottom: -30px;
+  font-size: clamp(0.375rem, 0.375rem + 2vw, 0.9375rem);
+  color: hsl(28deg, 10%, 53%);
+}
+.card__body__tally .box::after {
+  position: relative;
+  top: -2.1875rem;
+  left: -0.3125rem;
+  width: 50px;
+  text-align: center;
+  background-color: hsl(25deg, 47%, 15%);
+  color: hsl(33deg, 100%, 98%);
+  padding: 0.625em;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  visibility: hidden;
+}
+.card__body__tally__box1 {
+  height: 2.9375rem !important;
+}
+.card__body__tally__box1::before {
+  content: "mon";
+}
+.card__body__tally__box1::after {
+  content: "$10.36";
+}
+.card__body__tally__box2 {
+  height: 6.25rem !important;
+}
+.card__body__tally__box2::before {
+  content: "tue";
+}
+.card__body__tally__box2::after {
+  content: "$27.36";
+}
+.card__body__tally__box3 {
+  background-color: hsl(186deg, 34%, 60%) !important;
+  transition: 0.3s ease;
+}
+.card__body__tally__box3::before {
+  content: "wed";
+}
+.card__body__tally__box3::after {
+  content: "$52.36";
+}
+.card__body__tally__box3:hover {
+  background-color: hsl(186deg, 34%, 75%) !important;
+}
+.card__body__tally__box4 {
+  height: 5.3125rem !important;
+}
+.card__body__tally__box4::before {
+  content: "thu";
+}
+.card__body__tally__box4::after {
+  content: "$23.07";
+}
+.card__body__tally__box5 {
+  height: 4.0625rem !important;
+}
+.card__body__tally__box5::before {
+  content: "fri";
+}
+.card__body__tally__box5::after {
+  content: "$19.16";
+}
+.card__body__tally__box6 {
+  height: 7.5rem !important;
+}
+.card__body__tally__box6::before {
+  content: "sat";
+}
+.card__body__tally__box6::after {
+  content: "$39.05";
+}
+.card__body__tally__box7 {
+  height: 4.5625rem !important;
+}
+.card__body__tally__box7::before {
+  content: "sun";
+}
+.card__body__tally__box7::after {
+  content: "$21.26";
+}
+.card__body__footer {
+  border-top: 0.125rem solid hsl(27deg, 66%, 92%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0.9375em 0.625rem;
+}
+.card__body__footer__left__total {
+  color: hsl(28deg, 10%, 53%);
+  cursor: pointer;
+}
+.card__body__footer__left__total-amount {
+  margin-top: 0.625rem;
+  cursor: pointer;
+}
+.card__body__footer__right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.card__body__footer__right__percentage {
+  align-self: flex-end;
+  cursor: pointer;
+}
+.card__body__footer__right__period {
+  color: hsl(28deg, 10%, 53%);
+  cursor: pointer;
+}
+
+.kamasah {
+  position: relative;
+  bottom: 0;
+  margin-top: 0.3125rem;
+  display: none;
+}
+.kamasah .user {
+  width: 3.4375rem;
+  height: 3.4375rem;
+  overflow: hidden;
+  border-radius: 100%;
+}
+@media (min-width: 56.25em) {
+  .kamasah {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    top: 1.875rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    right: 1.875rem;
+  }
+  .kamasah .user:hover {
+    border: 2px solid black;
+  }
+  .kamasah span {
+    color: hsl(27deg, 66%, 92%);
+    background-color: hsl(25deg, 47%, 15%);
+    padding: 0.3125rem;
+    margin-top: 0.5em;
+    border-radius: 0.3125em;
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./dist/style.css" />
+		<title>Frontend Mentor | Expenses chart component</title>
+	</head>
+	<body>
+		<main class="card">
+			<div class="card__header">
+				<div class="card__header__left">
+					<span class="card__header__left__balance">My balance</span>
+					<h1 class="card__header__left__amount">$921.48</h1>
+				</div>
+				<div class="card__header--right">
+					<img src="../dist/images/logo.svg" alt="logo" />
+				</div>
+			</div>
+			<div class="card__body">
+				<h2 class="card__body--period">Spending - Last 7 days</h2>
+				<div class="card__body__tally">
+					<div class="card__body__tally__box1 box"></div>
+					<div class="card__body__tally__box2 box"></div>
+					<div class="card__body__tally__box3 box"></div>
+					<div class="card__body__tally__box4 box"></div>
+					<div class="card__body__tally__box5 box"></div>
+					<div class="card__body__tally__box6 box"></div>
+					<div class="card__body__tally__box7 box"></div>
+				</div>
+
+				<div class="card__body__footer">
+					<div class="card__body__footer__left">
+						<span class="card__body__footer__left__total"
+							>Total this month</span
+						>
+						<h3 class="card__body__footer__left__total-amount">$478.33</h3>
+					</div>
+					<div class="card__body__footer__right">
+						<h4 class="card__body__footer__right__percentage">+2.4%</h4>
+						<span class="card__body__footer__right__period"
+							>from last month</span
+						>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="attribution">
+			Challenge by
+			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+				>Frontend Mentor</a
+			>. Coded by <a href="#">Kamasah Dickson</a>.
+		</footer>
+
+		<div class="kamasah" id="kamasah">
+			<div class="user" aria-hidden="true">
+				<a href="">
+					<img src="./dist/images/Kamasah.jpg" alt="" />
+				</a>
+			</div>
+		</div>
+
+		<script src="./app/js/app.js"></script>
+	</body>
+</html>

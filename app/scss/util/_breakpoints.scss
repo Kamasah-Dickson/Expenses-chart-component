@@ -1,0 +1,16 @@
+// 699.98px ,899.98px, 1439.98px==max-width
+//700px,900px,1440px===min-widht
+
+@use 'functions' as f;
+
+$breakpoint-min: (
+	'small': f.em(400),
+	'medium': f.em(900),
+	'large': f.em(1440),
+);
+
+@mixin min-width($size) {
+	@media (min-width: map-get($breakpoint-min,$size)) {
+		@content;
+	}
+}
